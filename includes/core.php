@@ -116,12 +116,24 @@ function setup() {
     $username = '';
     $password = '';
 
+    global $argc, $argv;
+
     while (empty($username) || empty($password)) {
-        print 'Type your username or email address: ';
-        $username = trim(fgets(STDIN));
+        if (isset($argc) AND isset($argv) AND $argc == 3)
+        {
+            $username = $argv[1];
+            $password = $argv[2];
+        }
+
+	if (empty($username)) {
+            print 'Type your username or email address: ';
+            $username = trim(fgets(STDIN));
+	}
         
-        print 'Type your password: ';
-        $password = trim(fgets(STDIN));
+	if (empty($password)) {
+            print 'Type your password: ';
+            $password = trim(fgets(STDIN));
+	}
 
         if (empty($username) || empty($password)) {
             print 'Please enter both username and password.' . PHP_EOL;
