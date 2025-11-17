@@ -25,6 +25,8 @@ This software was designed just for fun, playing around with external APIs and a
 - Now, run the import script: `php import.php`, you'll be asked for your e-mail (or username) and password. Type the credentials of your new account.
 - Wait for the import to complete.
 - That's it! Your favorites should now be available in your new account.
+- Note: You may also run import and export scripts with login and password as command line parameters: `php export.php login password` and `php import.php login password`
+
 
 # Disclaimer
 
